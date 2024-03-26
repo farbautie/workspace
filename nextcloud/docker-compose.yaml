@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    nextcloud:
+        image: nextcloud:24-apache
+        container_name: nextcloud
+        restart: unless-stopped
+        env_file:
+            - .env
+        ports:
+            - '8081:80'
+        volumes:
+            - ./nextcloud/config:/etc/nextcloud
+            - ./nextcloud/data:/var/www/html/data
+        
