@@ -81,12 +81,27 @@ services:
   redis:
     image: redis:alpine
     container_name: redis
+    restart: unless-stopped
     volumes:
       - ./redis:/data  
     networks: 
       - cloud
 
+  flame:
+    image: pawelmalak/flame:multiarch2.3.1
+    container_name: flame
+    restart: unless-stopped
+    volumes:
+      - ./flame/data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 4000:5005
+    env_file:
+      - .env
+
+
 volumes:
+  flame:
   pgadmin:
   postgres-data:
 

@@ -9,3 +9,6 @@ etc-dnsmasq.d/
 etc-pihole/
 
 portainer-data/
+
+redis/
+flame/
