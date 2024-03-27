@@ -1,3 +1,11 @@
 */.env
 nextcloud/nextcloud
 nextcloud/postgres-data
+
+pg/pgadmin
+pg/postgres-data
+
+pihole/etc-dnsmasq.d
+pihole/etc-pihole
+
+portainer/portainer-data
